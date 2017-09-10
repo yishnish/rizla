@@ -1,0 +1,2 @@
+module Rest::MessagesHelper
+end
