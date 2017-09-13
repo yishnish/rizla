@@ -23,7 +23,7 @@ private
   
   def authenticate
     user = User.find_by(name: params[:username])
-    return user && user.password == params[:password]
+    return user && user.authenticate(params[:password])
   end
   
   def set_up_cors

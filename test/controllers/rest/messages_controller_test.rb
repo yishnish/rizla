@@ -2,7 +2,8 @@ require 'test_helper'
 
 class Rest::MessagesControllerTest < ActionController::TestCase
   test 'should create a message' do
-    post :create, time: Time.zone.now, user: 'aphostle', message: 'yoongler', username: User.first.name, password: User.first.password
+    user = User.create(name: 'name', password: 'abc123')
+    post :create, time: Time.zone.now, user: 'aphostle', message: 'yoongler', username: user.name, password: user.password
     assert_response :success
     message = Message.find_by(user: 'aphostle')
     
