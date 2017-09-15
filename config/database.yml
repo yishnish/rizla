@@ -25,6 +25,6 @@ production:
   encoding: utf8
   database: rizladb
   username: root
-  password: ENV['MYSQL_ROOT_PASSWORD']
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
   host: rizladb
   port: 3306
