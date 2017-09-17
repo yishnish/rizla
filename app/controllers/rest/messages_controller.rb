@@ -18,7 +18,7 @@ class Rest::MessagesController < ApplicationController
 private
   
   def message_params
-    params.permit(:time, :user, :message)
+    params.permit(:time, :user, :message, :host)
   end
   
   def authenticate
