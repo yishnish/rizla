@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170910200357) do
+ActiveRecord::Schema.define(version: 20170917165317) do
 
   create_table "messages", force: :cascade do |t|
     t.datetime "time"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170910200357) do
     t.string   "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "host"
   end
 
   add_index "messages", ["user"], name: "index_messages_on_user"
