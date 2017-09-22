@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resource 'message', only: [:create]
   end
 
-  jsonapi_resources :messages
+  jsonapi_resources :messages, only: [:create, :show, :index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
