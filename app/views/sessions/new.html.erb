@@ -1,0 +1,13 @@
+<%= form_tag :sessions do %>
+    <div class='form_field'>
+      <%= label_tag :name %><br/>
+      <%= text_field_tag :name, params[:name] %><br/>
+    </div>
+    <div class='form_field'>
+      <%= label_tag :password %><br/>
+      <%= text_field_tag :password, params[:password] %><br/>
+    </div>
+    <div class='actions'>
+      <%= submit_tag 'Log in' %>
+    </div>
+<% end %>

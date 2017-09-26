@@ -1,3 +1,2 @@
-class MessagesController < ApplicationController
-
+class MessagesController < ApiController
 end
