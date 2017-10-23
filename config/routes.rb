@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   use_doorkeeper
 
   jsonapi_resources :messages, only: [:create, :show, :index]
+  jsonapi_resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

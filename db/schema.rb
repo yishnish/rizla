@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924195636) do
+ActiveRecord::Schema.define(version: 20171022195735) do
 
   create_table "messages", force: :cascade do |t|
     t.datetime "time"
-    t.string   "user"
+    t.string   "user_name"
     t.string   "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "host"
     t.integer  "user_id"
+    t.string   "hashed_id"
   end
 
-  add_index "messages", ["user"], name: "index_messages_on_user"
+  add_index "messages", ["user_name"], name: "index_messages_on_user_name"
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", null: false
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170924195636) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "hashed_id"
   end
 
 end

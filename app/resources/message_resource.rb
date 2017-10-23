@@ -1,3 +1,10 @@
 class MessageResource < JSONAPI::Resource
-  attributes :host, :user, :time, :message
+  include HashedIdResource
+
+  attributes :host, :user_name, :time, :message
+  has_one :user
+
+  def id
+    @model.hashed_id
+  end
 end

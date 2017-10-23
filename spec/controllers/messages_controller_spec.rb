@@ -8,13 +8,13 @@ RSpec.describe MessagesController, type: :controller do
 
   it 'should create messages' do
     message = 'a message'
-    post :create, access_token: @token, data: {type: 'messages', attributes: {host: 'a host', user: 'a user', message: message, time: '12:04' }}
+    post :create, access_token: @token, data: {type: 'messages', attributes: {host: 'a host', user_name: 'a user', message: message, time: '12:04' }}
     expect(response.status).to eq(201)
     expect(Message.all.where(message: message).length).to eq(1)
   end
 
   it 'should get messages' do
-    Message.create(user: 'a user', message: 'a message')
+    Message.create(user_name: 'a user', message: 'a message')
     get :index, access_token: @token
 
     expect(JSON.parse(response.body)['data'][0]['attributes']['message']).to eq('a message')
